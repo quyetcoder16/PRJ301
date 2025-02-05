@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/register.css"/>
+    </head>
+    <body>
+        <h2 style="text-align: center;">Add new Students</h2>
+        <form id="form-submit" action="students/add" method="post">
+            <div id="container-box">
+                <div id="box1" class="box">
+                    <button class="btn-del-student" onclick="deleteStudent('box1')">delete</button>
+                    <input type="hidden" name="index" value="1"/>
+                    Student Id: <input name="stdId1" type="text"/> <br/>
+                    Student Name: <input type="text" name="stdName1"/> <br/>
+                    Gender:  <input name="stdGender1" type="radio" value="male" checked="checked" /> Male
+                    <input name="stdGender1" type="radio" value="female" /> Female <br/>
+                    DOB: <input name="dob1" type="date"/>
+                </div>
+            </div>
+            <input class="btn-add-student" type="button" value="add new student" onclick="addStudent()"/>
+        </form>
+        <button class="btn-submit" value="send" onclick="document.getElementById('form-submit').submit()">Submit</button>
+        <script>
+            var count = 1;
+            function addStudent() {
+                count++;
+                var container_box = document.getElementById("container-box");
+                var newBox = document.createElement("div");
+                newBox.className = `box`;
+                newBox.id = `box${count}`;
+                var innerHtmlBox = `
+                    <button class="btn-del-student" onclick="deleteStudent('box${count}')">delete</button>
+                    <input type="hidden" name="index" value="${count}"/>
+                    Student Id: <input name="stdId${count}" type="text"/> <br/>
+                    Student Name: <input type="text" name="stdName${count}"/> <br/>
+                    Gender:  <input name="stdGender${count}" type="radio" value="male" checked="checked" /> Male
+                    <input name="stdGender${count}" type="radio" value="female" /> Female <br/>
+                    DOB: <input name="dob${count}" type="date"/>`;
+                newBox.innerHTML = innerHtmlBox;
+                container_box.appendChild(newBox);
+            }
+
+            function deleteStudent(boxId) {
+                var box = document.getElementById(boxId);
+                box.remove();
+
+            }
+        </script>
+    </body>
+</html>
