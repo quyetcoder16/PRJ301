@@ -1,0 +1,55 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Jan 18, 2025, 9:19:49 AM
+    Author     : quyet
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#form-submit{
+    width: 400px;
+    margin: auto;
+}
+
+.box{
+    position: relative;
+    border: 1px solid aqua;
+    padding: 5px;
+    margin: 10px;
+}
+
+.box input{
+    margin-top: 2px;
+}
+
+.btn-add-student{
+    padding: 5px;
+    color: white;
+    background: blue;
+    border: none;
+}
+
+.btn-del-student{
+    position: absolute;
+    right: 10px;
+    padding: 5px;
+    color:white;
+    background-color: red;
+    border: none;
+}
+
+.btn-submit{
+    display: block;
+    color: white;
+    background-color: green;
+    padding: 10px;
+    text-align: center;
+    margin: auto;
+    border: none;
+}
